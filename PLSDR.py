@@ -54,7 +54,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.2"
+    PLSDR.VERSION = "1.3"
     
     # device names and invocation strings
     # some tested, some search results
