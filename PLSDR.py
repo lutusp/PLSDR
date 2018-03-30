@@ -54,6 +54,8 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
+    PLSDR.VERSION = "1.2"
+    
     # device names and invocation strings
     # some tested, some search results
     # please tell the author of any new, successful
@@ -78,10 +80,9 @@ class PLSDR(QMainWindow, Ui_MainWindow):
       'PlutoSDR':'ip:pluto.local',
     }
       
-    self.VERSION = "1.1"
     self.app = app
     self.setupUi(self)
-    self.setWindowTitle("PLSDR Version %s" % self.VERSION)
+    self.setWindowTitle("PLSDR Version %s" % PLSDR.VERSION)
     self.app_icon = QtGui.QIcon()
     self.app_icon.addFile('icon/app_icon_16x16.png', QtCore.QSize(16,16))
     self.app_icon.addFile('icon/app_icon_24x24.png', QtCore.QSize(24,24))
@@ -261,7 +262,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     try:
       with open('help_page/index.html') as f:
         data = f.read()
-      data = re.sub('#VERSION#',self.VERSION,data)
+      data = re.sub('#VERSION#',PLSDR.VERSION,data)
       data = re.sub('#CONFIG_FILE#',self.config_file,data)
       data = re.sub('#CONFIG_DIR#',self.config_path,data)
       self.help_text_browser.setText(data)
