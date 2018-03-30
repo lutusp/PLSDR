@@ -471,9 +471,9 @@ class Radio(gr.top_block,QWidget):
     if self.mode == self.main.MODE_AM:
       self.connect((self.osmosdr_source, 0), (self.rational_resampler_nrw, 0))
       self.connect((self.rational_resampler_nrw, 0), (self.freq_xlating_fir_filter, 0))
-      self.connect((self.freq_xlating_fir_filter, 0), (self.analog_pwr_squelch, 0))
-      self.connect((self.analog_pwr_squelch, 0), (self.low_pass_filter_am, 0))
-      self.connect((self.low_pass_filter_am, 0), (self.analog_agc_cc, 0))
+      self.connect((self.freq_xlating_fir_filter, 0), (self.low_pass_filter_am, 0))
+      self.connect((self.low_pass_filter_am, 0), (self.analog_pwr_squelch, 0))
+      self.connect((self.analog_pwr_squelch, 0), (self.analog_agc_cc, 0))
       self.connect((self.analog_agc_cc, 0), (self.blocks_complex_to_mag_am, 0))
       self.connect((self.blocks_complex_to_mag_am, 0), (self.blocks_multiply_const_volume, 0))
       self.connect((self.blocks_multiply_const_volume, 0), (self.audio_sink, 0))
@@ -481,9 +481,9 @@ class Radio(gr.top_block,QWidget):
     elif self.mode == self.main.MODE_FM:
       self.connect((self.osmosdr_source, 0), (self.rational_resampler_nrw, 0))
       self.connect((self.rational_resampler_nrw, 0), (self.freq_xlating_fir_filter, 0))
-      self.connect((self.freq_xlating_fir_filter, 0), (self.analog_pwr_squelch, 0))
-      self.connect((self.analog_pwr_squelch, 0), (self.low_pass_filter_fm, 0))
-      self.connect((self.low_pass_filter_fm, 0), (self.analog_agc_cc, 0))
+      self.connect((self.freq_xlating_fir_filter, 0), (self.low_pass_filter_fm, 0))
+      self.connect((self.low_pass_filter_fm, 0), (self.analog_pwr_squelch, 0))
+      self.connect((self.analog_pwr_squelch, 0), (self.analog_agc_cc, 0))
       self.connect((self.analog_agc_cc, 0), (self.analog_nbfm_rcv, 0))
       self.connect((self.analog_nbfm_rcv, 0), (self.blocks_multiply_const_volume, 0))
       self.connect((self.blocks_multiply_const_volume, 0), (self.audio_sink, 0))
@@ -491,9 +491,9 @@ class Radio(gr.top_block,QWidget):
     elif self.mode == self.main.MODE_WFM:
       self.connect((self.osmosdr_source, 0), (self.rational_resampler_wid, 0))
       self.connect((self.rational_resampler_wid, 0), (self.freq_xlating_fir_filter, 0))
-      self.connect((self.freq_xlating_fir_filter, 0), (self.analog_pwr_squelch, 0))
-      self.connect((self.analog_pwr_squelch, 0), (self.low_pass_filter_wfm, 0))
-      self.connect((self.low_pass_filter_wfm, 0), (self.analog_agc_cc, 0))
+      self.connect((self.freq_xlating_fir_filter, 0), (self.low_pass_filter_wfm, 0))
+      self.connect((self.low_pass_filter_wfm, 0), (self.analog_pwr_squelch, 0))
+      self.connect((self.analog_pwr_squelch, 0), (self.analog_agc_cc, 0))
       self.connect((self.analog_agc_cc, 0), (self.analog_wfm_rcv, 0)) 
       self.connect((self.analog_wfm_rcv, 0), (self.blocks_multiply_const_volume, 0))
       self.connect((self.blocks_multiply_const_volume, 0), (self.audio_sink, 0))
@@ -512,7 +512,8 @@ class Radio(gr.top_block,QWidget):
       self.connect((self.blocks_multiply_const_ssb, 0), (self.blocks_add, 1))
       self.connect((self.blocks_complex_to_real, 0), (self.blocks_add, 0))
       self.connect((self.blocks_add, 0), (self.low_pass_filter_ssb, 0))
-      self.connect((self.low_pass_filter_ssb, 0), (self.analog_agc_ff, 0))
+      self.connect((self.low_pass_filter_ssb, 0), (self.analog_pwr_squelch_ssb, 0))
+      self.connect((self.analog_pwr_squelch_ssb, 0), (self.analog_agc_ff, 0))
       self.connect((self.analog_agc_ff, 0), (self.blocks_multiply_const_volume, 0))
       self.connect((self.blocks_multiply_const_volume, 0), (self.audio_sink, 0))
         
@@ -530,8 +531,10 @@ class Radio(gr.top_block,QWidget):
       self.connect((self.blocks_multiply_const_ssb, 0), (self.blocks_add, 1))
       self.connect((self.blocks_complex_to_real, 0), (self.blocks_add, 0))
       self.connect((self.blocks_add, 0), (self.band_pass_filter_cw, 0))
-      self.connect((self.band_pass_filter_cw, 0), (self.analog_agc_ff, 0))
+      self.connect((self.band_pass_filter_cw, 0), (self.analog_pwr_squelch_ssb, 0))
+      self.connect((self.analog_pwr_squelch_ssb, 0), (self.analog_agc_ff, 0))
       self.connect((self.analog_agc_ff, 0), (self.blocks_multiply_const_volume, 0))
+
       self.connect((self.blocks_multiply_const_volume, 0), (self.audio_sink, 0))
 
     else:
