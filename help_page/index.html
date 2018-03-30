@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!-- Created on Mar 22, 2018 10:58:56 AM -->
+
+<html lang="en">
+  <head>
+    <meta charset=utf-8 />
+    <title>
+      PLSDR #VERSION# Help
+    </title>
+    <meta name="GENERATOR" content="Arachnophilia 5.5" />
+    <meta name="FORMATTER" content="Arachnophilia 5.5" />
+    
+  </head>
+  
+  <body>
+    
+    <div align="center">
+      <p>
+        <span style="font-size:large;font-weight:bold;">
+          PLSDR #VERSION# Help
+        </span>
+      </p>
+    </div>
+    <ul>
+      <li>
+        <p>
+          Visit the <a title="http://arachnoid.com/PLSDR" href="http://arachnoid.com/PLSDR">PLSDR Home Page</a> for full documentation. This brief exposition is designed for people who don't read instructions.
+        </p>
+      </li>
+      
+      <li>
+        <p>PLSDR #VERSION# is &copy; Copyright 2018, <a href="http://arachnoid.com/administration">P. Lutus</a> and is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL</a>.
+        </p>
+      </li>
+      
+      
+      <li>You may need to drag the vertical divider to make this page wide enough to read.</li>
+      
+      
+      <li>
+        <p>
+        <b>Instructions</b> (<u title="Like this">hover over underlined passages</u> to get more data):</p>
+        
+        
+        <ol>
+          <li>Connect a radio receiver device to your computer.</li>
+          <li>In this program, move to <i>Configure</i> ... <i>Device</i> and choose a device name corresponding to your radio.</li>
+          <li>Press <i>Start/Stop</i> to enable the radio and this program.</li>
+          <li>If signal processing doesn't begin, in particular if you're on a Windows platform, refer to the <a href="#troubleshooting">Troubleshooting</a> and <a href="#add_radios">Add/Edit Radios</a> sections below.</li>
+        </ol>
+        <ul>
+          <li>If your radio uses upconversion to accommodate HF frequencies, move to <i>Configure ... use upconversion</i>, enable the feature and enter
+          <u title="The default values are for the HamItUp device">appropriate frequency values</u>.</li>
+          <li>If your radio has a zero-frequency spike that prevents weak-signal reception, go to <i>Configure ... Use offset tuning</i>, enable the feature and choose <u title="Small offset values keep the receiver in its design passband but a zero-frequency spike is always visible<br/>">suitable frequency values</u>.</li>
+          
+          <li><b>Spectrum display control options</b>:
+            <ul>
+              <li>Mouse wheel expands/contracts the horizontal frequency range.</li>
+              <li><u title="Meaning keyboard Ctrl key + wheel motion<br/>">Ctrl+mouse wheel</u> expands/contracts the vertical axis (signal strength or amplitude).</li>
+              <li>Drag the mouse horizontally to change frequencies.</li>
+              <li>Drag the mouse vertically to change the position of the amplitude trace.</li>
+              <li>Right-click resets both the above to default values.</li>
+            </ul>
+          </li>
+          
+          
+          <li><b>Frequency change options</b>:
+            <ul>
+              <li>Drag your mouse cursor horizontally on the spectrum display to move a signal to the vertical red line (the receiver's passband center).</li>
+              <li>Double-click a signal of interest to center it in the receiver's passband.</li>
+              <li>Mouse-wheel the frequency display (large green digits at the upper left), each digit is individually accessible.</li>
+              <li>Click an entry in the frequency table.</li>
+              <li><u title="+/-,Arrow keys, Page Up/Down and Insert/Delete in order of increasing magnitude of frequency change. It may be necessary to click the frequency display before using the keyboard<br/>">Use your keyboard</u> for fine tuning, scanning and convenient frequency browsing.</li>
+            </ul>
+          </li>
+          <li>Right-click the frequency display to reset digits to the right of the mouse cursor.</li>
+          <li>Notice that in this program, the mouse wheel can control nearly everything &mdash; the spectrum display, the waterfall display, the adjustment sliders and the text entries.</li>
+          
+        </ul>
+      </li>
+      <a name="troubleshooting"></a><li><p><b>Troubleshooting.</b> In event of problems, try the following:</p>
+        <ul>
+          
+          <li>Run PLSDR in a command shell to see error messages.</li>
+          
+          <li>Make sure the device selected by <i>Configure ... Device</i> matches the <b>single</b> attached radio device.</li>
+          
+          <li>To maximize chances for a successful start, set <i>FFT Size</i> to 4096 or less, <i>Rate FPS</i> to 10 or less.</li>
+          
+          <li>Enable/disable upconversion and offset tuning as required by your device, set <i>Squelch</i> to minimum, set <i>RF Gain, IF Gain, BB Gain and RF BW</i> to midrange.</li>
+          
+          <li>Set <i>AGC</i> to Off, <i>IF BW</i> to Wide.</li>
+          
+          <li>If your radio device uses upconversion, don't forget that, even though PLSDR automatically provides upconversion frequency data for appropriate frequencies, <u title="Example: HamItUp">some devices</u> also require that a physical switch be thrown.</li>
+          
+          <li>It may be necessary to change your device's invocation settings or add a new invocation string &mdash; read the <a href="#add_radios">Add/Edit Radios</a> section below.</li>
+          
+          <li>On Windows, configuring hardware and USB/interface drivers is much more complicated than on Linux &mdash; be sure to read the <a href="http://arachnoid.com/PLSDR">online documentation</a> for assistance.</li>
+          
+          <li>If all these steps fail, exit the program, delete its <u title="Located on this system at #CONFIG_FILE#">configuration file</u> and restart.</li>
+          
+          <li>One goal of this project was to make an SDR that would run on a Raspberry Pi. Unfortunately, because of the use of Python and the many features included in the project, this is no longer possible.</li>
+        </ul>
+        
+      </li>
+      <a name="add_radios"></a><li><p><b>Add/Edit Radios</b></p>
+        <ul>
+          <li>There are now scores of computer-acessory radios with any number of interface requirements, and no effort to establish a common communications protocol.</li>
+          <li>So <u title="a.k.a. Software-Defined Radios, like this program<br/>">programs that communicate with radios</u> must sometimes be tuned/edited to accommodate new or unknown devices. And of the many existing devices, the author only has three. This program's launch data for the remainder are based on Web searches and may well be wrong. Also, new devices will appear and could be used with this program if only an appropriate invocation string were added.</li>
+          <li>Beyond the above, if you're on a Windows platform, a rather baroque USB-driver procedure is required to accommodate SDR devices, a topic covered on the <a href="http://arachnoid.com/PLSDR">PLSDR Home Page</a>.</li>
+          
+          <li>In this program's main Python code file "PLSDR.py", near the top of the listing is an array named "device_dict," a generic Python <a href="https://en.wikipedia.org/wiki/Associative_array">dictionary</a> containing paired display names and invocation strings:
+            <blockquote style="font-family:monospace">
+              'Display name' : 'invocation string',
+            </blockquote>
+          </li>
+          <li>The <u title="Called the 'key'">left string</u> describes how this radio will appear in the <i>Configure ... Device</i> list. The <u title="Called the 'value'">right string</u> is the invocation specifier for that device. Each key/value pair must end with a comma as shown.</li>
+          <li>The author began this process by adding data for the three radios he owns, then searching for other similar data online. But without personally testing each radio in the list, it's not <u title="Likely? Probable?">certain</u> the entered data are accurate.</li>
+          <li>You are encouraged to <u title="This is the real meaning of 'open source' &mdash; there should be no wall between programmers and users<br/>">add to or edit this dictionary</u>. And if you add a new (or edit an existing) description to this program that works, by all means <a href="https://arachnoid.com/messages/index.php">tell the author about it</a>.</li>
+        </ul>
+      </li>
+      <li><p><b>Conclusion</b></p>
+        <ul>
+          <li>Hey &mdash; if you've read this far, chances are you're not suffering from the dreaded TL/DR Syndrome, so I suggest a visit to this program's <a title="http://arachnoid.com/PLSDR" href="http://arachnoid.com/PLSDR">Home Page</a>.</li>
+        </ul>
+      </li>
+    </ul>
+    
+  </body>
+</html>

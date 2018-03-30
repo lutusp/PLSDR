@@ -1,0 +1,188 @@
+Name,Mode,Freq MHz,Comment
+AM broadcast,am,0.54,540 Khz
+WWV,am,2.5,WWV Time Standard
+WWV,am,5,WWV Time Standard
+WWV,am,10,WWV Time Standard
+WWV,am,15,WWV Time Standard
+WWV,am,20,WWV Time Standard
+Ham 80,lsb,3.9,Radio Amateur Band
+Ham 40,lsb,7.2,Radio Amateur Band
+Ham 20,usb,14.2,Radio Amateur Band
+Ham 15,usb,21.2,Radio Amateur Band
+Ham 10,usb,28.2,Radio Amateur Band
+SWL 120 meter,am,2.3,2300-2495 Khz
+SWL 90 meter,am,3.2,3200-3400 Khz
+SWL 75 meter,am,3.9,3900-4000 Khz
+SWL 60 meter,am,4.75,4750-5060 Khz
+SWL 49 meter,am,5.9,5900-6200 Khz
+SWL 41 meter,am,7.1,7100-7350 Khz
+SWL 31 meter,am,9.4,9400-9990 Khz
+SWL 25 meter,am,11.6,11600-12100 Khz
+SWL 22 meter,am,13.5,13500-13870 Khz
+SWL 19 meter,am,15.1,15100-15800 Khz
+SWL 16 meter,am,17.48,17480-17900 Khz
+SWL 15 meter,am,18.9,18900-19020 Khz
+SWL 13 meter,am,21.45,21450-21750 Khz
+SWL 11 meter,am,25.6,25600-26100 Khz
+Navtex,usb,0.517,Navtex decode 0.518 (-1 Khz)
+Marine Emergency,usb,2.182,International distress & calling
+Marine Emergency,usb,4.125,International distress & calling
+Marine Emergency,usb,6.215,International distress & calling
+Marine Emergency,usb,8.291,International distress & calling
+Marine Emergency,usb,12.29,International distress & calling
+Marine Emergency,usb,16.42,International distress & calling
+Marine Working,usb,2.67,CG Working
+Marine ITU 424,usb,4.134,500 mile CG Working
+Marine ITU 601,usb,6.2,Gulf Coast Guard working channel
+Marine ITU 816,usb,8.24,Medium range CG Working
+Marine ITU 1205,usb,12.242,Long range 24H CG Working
+Marine ITU 1625,usb,16.432,Day/evening long range CG Working
+HF Weather,usb,2.054,BC-Canada Weather
+HF-FAX Pt. Reyes,usb,4.3441,HF Weather FAX (-1.9 KHz)
+HF-FAX Pt. Reyes,usb,8.6801,HF Weather FAX (-1.9 KHz)
+HF-FAX Pt. Reyes,usb,12.7841,HF Weather FAX (-1.9 KHz)
+HF-FAX Pt. Reyes,usb,17.1493,HF Weather FAX (-1.9 KHz)
+HF-FAX Pt. Reyes,usb,22.5251,HF Weather FAX (-1.9 KHz)
+HF-FAX Hawaii,usb,9.9806,HF Weather FAX (-1.9 KHz)
+HF-FAX Hawaii,usb,11.0881,HF Weather FAX (-1.9 KHz)
+HF-FAX Hawaii,usb,16.1331,HF Weather FAX (-1.9 KHz)
+HF-FAX Kodiak,usb,2.0521,HF Weather FAX (-1.9 KHz)
+HF-FAX Kodiak,usb,4.2961,HF Weather FAX (-1.9 KHz)
+HF-FAX Kodiak,usb,8.4571,HF Weather FAX (-1.9 KHz)
+HF-FAX Kodiak,usb,12.4106,HF Weather FAX (-1.9 KHz)
+Weather W01,fm,162.55,VHF Weather
+Weather W02,fm,162.4,VHF Weather
+Weather W03,fm,162.475,VHF Weather
+Weather W04,fm,162.425,VHF Weather
+Weather W05,fm,162.45,VHF Weather
+Weather W06,fm,162.5,VHF Weather
+Weather W07,fm,162.525,VHF Weather
+Weather W08,fm,161.65,VHF Weather
+Weather W09,fm,161.775,VHF Weather
+Weather W10,fm,163.275,VHF Weather
+FM Broadcast,wfm,100,Center of FM band
+2m Ham Band,fm,146,Middle of 2m
+70 cm ham band,fm,440,
+Emergency Beacon,am,121.5,EPIRB output frequency
+Emergency Beacon,am,406,EPIRB output frequency
+Marine VHF 01A,fm,156.05,
+Marine VHF 03A,fm,156.15,
+Marine VHF 05A,fm,156.25,
+Marine VHF 06,fm,156.3,
+Marine VHF 07A,fm,156.35,
+Marine VHF 08,fm,156.4,
+Marine VHF 09,fm,156.45,
+Marine VHF 10,fm,156.5,
+Marine VHF 11,fm,156.55,
+Marine VHF 12,fm,156.6,
+Marine VHF 13,fm,156.65,
+Marine VHF 14,fm,156.7,
+Marine VHF 15,fm,156.75,
+Marine VHF 16,fm,156.8,
+Marine VHF 17,fm,156.85,
+Marine VHF 18A,fm,156.9,
+Marine VHF 19A,fm,161.55,
+Marine VHF 20,fm,161.6,
+Marine VHF 20A,fm,157,
+Marine VHF 21A,fm,157.05,
+Marine VHF 22A,fm,157.1,
+Marine VHF 23A,fm,157.15,
+Marine VHF 24,fm,161.8,
+Marine VHF 25,fm,161.85,
+Marine VHF 26,fm,161.9,
+Marine VHF 27,fm,161.95,
+Marine VHF 28,fm,162,
+Marine VHF 61A,fm,156.075,
+Marine VHF 63A,fm,156.175,
+Marine VHF 64A,fm,156.225,
+Marine VHF 65A,fm,156.275,
+Marine VHF 66A,fm,156.325,
+Marine VHF 67,fm,156.375,
+Marine VHF 68,fm,156.425,
+Marine VHF 69,fm,156.475,
+Marine VHF 70,fm,156.525,
+Marine VHF 71,fm,156.575,
+Marine VHF 72,fm,156.625,
+Marine VHF 73,fm,156.675,
+Marine VHF 74,fm,156.725,
+Marine VHF 77,fm,156.875,
+Marine VHF 78A,fm,156.925,
+Marine VHF 79A,fm,156.975,
+Marine VHF 80A,fm,157.025,
+Marine VHF 81A,fm,157.075,
+Marine VHF 82A,fm,157.125,
+Marine VHF 83A,fm,157.175,
+Marine VHF 84,fm,161.825,
+Marine VHF 85,fm,161.875,
+Marine VHF 86,fm,161.925,
+Marine VHF 87,fm,157.375,
+Marine VHF 88,fm,157.475,
+Marine AIS 1,fm,161.975,Automatic Identification System
+Marine AIS 2,fm,162.025,Automatic Identification System
+FRS Ch 01,fm,462.5625,
+FRS Ch 02,fm,462.5875,
+FRS Ch 03,fm,462.6125,
+FRS Ch 04,fm,462.6375,
+FRS Ch 05,fm,462.6625,
+FRS Ch 06,fm,462.6875,
+FRS Ch 07,fm,462.7125,
+FRS Ch 08,fm,467.5625,
+FRS Ch 09,fm,467.5875,
+FRS Ch 10,fm,467.6125,
+FRS Ch 11,fm,467.6375,
+FRS Ch 12,fm,467.6625,
+FRS Ch 13,fm,467.6875,
+FRS Ch 14,fm,467.7125,
+FRS Ch 15,fm,462.55,
+FRS Ch 16,fm,462.575,
+FRS Ch 17,fm,462.6,
+FRS Ch 18,fm,462.625,
+FRS Ch 19,fm,462.65,
+FRS Ch 20,fm,462.675,
+FRS Ch 21,fm,462.7,
+FRS Ch 22,fm,462.725,
+MURS 1,fm,151.82,
+MURS 2,fm,151.88,
+MURS 3,fm,151.94,
+MURS BD,fm,154.57,
+MURS GD,fm,154.6,
+CB 1,am,26.965,
+CB 2,am,26.975,
+CB 3,am,26.985,
+CB 4,am,27.005,
+CB 5,am,27.015,
+CB 6,am,27.025,
+CB 7,am,27.035,
+CB 8,am,27.055,
+CB 9,am,27.065,
+CB 10,am,27.075,
+CB 11,am,27.085,
+CB 12,am,27.105,
+CB 13,am,27.115,
+CB 14,am,27.125,
+CB 15,am,27.135,
+CB 16,am,27.155,
+CB 17,am,27.165,
+CB 18,am,27.175,
+CB 19,am,27.185,
+CB 20,am,27.205,
+CB 21,am,27.215,
+CB 22,am,27.225,
+CB 23,am,27.255,
+CB 24,am,27.235,
+CB 25,am,27.245,
+CB 26,am,27.265,
+CB 27,am,27.275,
+CB 28,am,27.285,
+CB 29,am,27.295,
+CB 30,am,27.305,
+CB 31,am,27.315,
+CB 32,am,27.325,
+CB 33,am,27.335,
+CB 34,am,27.345,
+CB 35,am,27.355,
+CB 36,am,27.365,
+CB 37,am,27.375,
+CB 38,am,27.385,
+CB 39,am,27.395,
+CB 40,am,27.405,
