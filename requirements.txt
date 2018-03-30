@@ -1,0 +1,3 @@
+gnuradio
+gr-osmosdr
+python-pyqt5
