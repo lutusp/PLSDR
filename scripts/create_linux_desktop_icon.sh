@@ -4,7 +4,9 @@ cd ..
 
 path=`pwd`
 
-cat << EOF > $HOME/Desktop/PLSDR.desktop
+target=$HOME/Desktop/PLSDR.desktop
+
+cat << EOF > $target
 [Desktop Entry]
 Comment=PLSDR software-defined radio
 Encoding=UTF-8
@@ -19,3 +21,5 @@ StartupNotify=false
 Terminal=false
 Type=Application
 EOF
+
+chmod +x $target
