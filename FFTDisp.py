@@ -84,8 +84,10 @@ class FFTDispWidget(QWidget):
   def acquire_params(self):
     self.acquire_essential()
     self.cf = self.config['freq']
-    self.bw = self.main.sample_rate_control.get_value()
-    self.bwd2 = self.bw/2
+    # now that this relies on a response from the radio,
+    # this call may wrongly return zero
+    self.sr = self.main.sample_rate_control.get_value()
+    self.srd2 = self.sr/2
   
   def process_zoom(self,z):
     z = (z,.499)[z > .499]
@@ -113,7 +115,7 @@ class FFTDispWidget(QWidget):
     if self.mp != None:
       # if mouse drag in progress
       if self.mouse_startx != None:
-        delta = (self.mouse_startx-self.mousex) * self.bw / self.dw
+        delta = (self.mouse_startx-self.mousex) * self.sr / self.dw
         self.mouse_startx = self.mousex
         f = self.zoom_scale(delta) + self.cf
         self.main.assign_freq(f)
@@ -149,7 +151,7 @@ class FFTDispWidget(QWidget):
         # double-click assigns frequency
         # of mouse cursor location
         dx = self.zoom_scale(self.mousex/self.dw)
-        f = self.ntrp(dx,0,1,self.cf-self.bwd2,self.cf+self.bwd2)
+        f = self.ntrp(dx,0,1,self.cf-self.srd2,self.cf+self.srd2)
         self.main.assign_freq(f)
       if t == QEvent.MouseButtonPress:
         # start mouse drag mode
@@ -173,8 +175,8 @@ class FFTDispWidget(QWidget):
       mpa = self.mpa
       mpb = self.mpb
       # shift displayed spectrum by offset frequency
-      if self.zoom != None and self.zoom > 0:
-        df = float(self.main.radio.compute_offset_f()) / self.bw
+      if self.zoom != None and self.zoom > 0 and self.sr != 0:
+        df = float(self.main.radio.compute_offset_f()) / self.sr
         mpa -= df
         mpb -= df
         mpa = (mpa,0)[mpa < 0]
@@ -239,7 +241,7 @@ class FFTDispWidget(QWidget):
       for n in range(1,steps):
         nn = self.zoom_scale((float(n)/steps))
         x = self.ntrp(n,0,steps,0,self.dw)
-        f = self.ntrp(nn,0,1,self.cf-self.bwd2,self.cf+self.bwd2)
+        f = self.ntrp(nn,0,1,self.cf-self.srd2,self.cf+self.srd2)
         # a way to limit the number of displayed digits
         # based on the size of the frequency number
         ff = (f,0)[f < 0]
@@ -259,7 +261,7 @@ class FFTDispWidget(QWidget):
       # draw information label
       if self.mp != None:
         n = self.zoom_scale(self.mousex/self.dw)
-        f = self.ntrp(n,0,1,self.cf-self.bwd2,self.cf+self.bwd2)
+        f = self.ntrp(n,0,1,self.cf-self.srd2,self.cf+self.srd2)
         #qp.setPen(QtGui.QColor(128,128,255))
         s = "%.3f MHz" % (f/1e6)
         qp.drawText(self.mp.x(),self.mp.y()-24,s)
