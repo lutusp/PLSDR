@@ -54,7 +54,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.5"
+    PLSDR.VERSION = "1.6"
     
     # device names and invocation strings --
     # some are tested, some are search results
@@ -800,7 +800,8 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     Qt.QApplication.quit()   
 
 if __name__ == "__main__":
-  os.chdir(os.path.dirname(sys.argv[0]))
+  pd = os.path.dirname(os.path.abspath(sys.argv[0]))
+  os.chdir(pd)
   app = Qt.QApplication(sys.argv)
   window = PLSDR(app)
   window.show()
