@@ -54,30 +54,32 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.4"
+    PLSDR.VERSION = "1.5"
     
-    # device names and invocation strings
-    # some tested, some search results
+    # device names and invocation strings --
+    # some are tested, some are search results
+    # of doubtful accuracy.
+    # feel free to add new entries.
     # please tell the author of any new, successful
     # devices and invocation strings
-    # or problems with/changes to these
+    # or problems with (or changes to) these
+    # also enter local IP:port values where required
     
     self.device_dict = {
-      'RTL-SDR':'rtl',
-      'RTL-SDR TCP':'rtl_tcp',
-      'HackRF':'hackrf',
-      'SDRplay':'soapy=0,driver=sdrplay',
-      'LimeSDR':'soapy=0,driver=lime',
-      'USRP':'uhd',
-      'BladeRF':'bladerf',
       'AirSpy':'airspy',
-      'OsmoSDR':'osmosdr',
-      'Miri':'miri',
-      'RFSPACE':'sdr-iq',
+      'BladeRF':'bladerf',
       'FCD':'fcd',
-       # this IP must be changed for any specific installation
-      'RedPitaya':'redpitaya=192.168.1.100:1001',
-      'PlutoSDR':'ip:pluto.local',
+      'HackRF':'hackrf',
+      'LimeSDR':'soapy=0,driver=lime',
+      'Miri':'miri',
+      'OsmoSDR':'osmosdr',
+      'PlutoSDR':'ip:pluto.local',      
+      'RedPitaya':'redpitaya=127.0.0.1:1234', # change this IP:port value
+      'RFSPACE':'sdr-iq',
+      'RTL-SDR':'rtl',
+      'RTL-SDR TCP':'rtl_tcp=127.0.0.1:1234', # change this IP:port value
+      'SDRplay':'soapy=0,driver=sdrplay',
+      'USRP':'uhd',
     }
       
     self.app = app
