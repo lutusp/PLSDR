@@ -800,7 +800,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     Qt.QApplication.quit()   
 
 if __name__ == "__main__":
-  os.chdir(os.path.dirname(sys.argv[0]))
+  os.chdir(os.path.abspath(os.path.dirname(sys.argv[0])))
   app = Qt.QApplication(sys.argv)
   window = PLSDR(app)
   window.show()
