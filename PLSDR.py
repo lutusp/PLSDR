@@ -54,7 +54,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.6"
+    PLSDR.VERSION = "1.7"
     
     # device names and invocation strings --
     # some are tested, some are search results
@@ -731,7 +731,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
       agc_attack_rate = 1e-1
       agc_decay_rate = 1e-1
       if mode == self.AGC_SLOW:
-        agc_decay_rate = 1e-2
+        agc_decay_rate = 1e-3
         agc_max_gain = 65536
       elif mode == self.AGC_FAST:
         agc_max_gain = 65536
