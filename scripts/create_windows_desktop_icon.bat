@@ -14,6 +14,6 @@ echo oLink.TargetPath = "%pp%\scripts\launch_PLSDR.bat" >> CreateShortcut.vbs
 echo oLink.IconLocation = "%pp%\icon\app_icon.ico, 0" >> CreateShortcut.vbs
 echo oLink.Save >> CreateShortcut.vbs
 cscript CreateShortcut.vbs
-rem del CreateShortcut.vbs
+del CreateShortcut.vbs
 
 set /p x="Done, press Enter:"
