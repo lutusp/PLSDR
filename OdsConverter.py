@@ -78,7 +78,7 @@ class OdsToArray():
       return None
 
   def array_from_path(self,path):
-    zf = zipfile.ZipFile(path)
+    zf = zipfile.ZipFile(path,'r')
     with zf.open('content.xml') as f:
       data = f.read()
     zf.close()

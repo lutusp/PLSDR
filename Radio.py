@@ -341,6 +341,7 @@ class Radio(gr.top_block,QWidget):
         labels[n].setText("%s Gain" % name)
         labels[n].setVisible(True)
         grange = self.osmosdr_source.get_gain_range(name).values()
+        # get the beginning and end values
         a,b = grange[1],grange[-1]
         control.set_range(a,b)
         control.set_value()
@@ -442,17 +443,20 @@ class Radio(gr.top_block,QWidget):
       average=(average != 1),
         )
 
-    self.blocks_multiply_const_volume = blocks.multiply_const_vff((volume, ))
-
     # this is the main FFT display
     self.fft_vector_sink = MyVectorSink(self.main,fft_size)
+    
+    self.blocks_multiply_const_volume = blocks.multiply_const_vff((volume, ))
         
+    # only create this once
     if self.audio_sink == None:
       try:
         self.audio_sink = audio.sink(self.audio_rate, config['audio_device'], True)
       except Exception as e:
         self.main.message_dialog("Audio Error","A problem has come up while accessing the audio system: %s" % e)
         self.error = True
+        self.audio_sink = None
+
     self.main.af_gain_control.set_value()
        
   def connect_blocks(self,config):

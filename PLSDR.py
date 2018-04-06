@@ -54,7 +54,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.7"
+    PLSDR.VERSION = "1.8"
     
     # device names and invocation strings --
     # some are tested, some are search results
@@ -608,9 +608,9 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     self.accessible_list = []
     path = self.detect_freq_file()
     if path == None:
-      data = self.read_file('frequency_spreadsheet/frequency_list.ods')
+      data = self.read_file('frequency_spreadsheet/frequency_list.ods','rb')
       path = "%s/frequency_list.ods" % self.config_path
-      self.write_file(path,data)
+      self.write_file(path,data,'wb')
     # if CSV table
     if re.search('(?i).*\.csv',path):
       table = []
@@ -784,12 +784,12 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     #print("change antennas: %s" % name)
     self.radio.change_antennas(name)
     
-  def read_file(self,path):
-    with open(path) as f:
+  def read_file(self,path,mode = 'r'):
+    with open(path,mode) as f:
       return f.read()
       
-  def write_file(self,path,data):
-    with open(path,'w') as f:
+  def write_file(self,path,data,mode = 'w'):
+    with open(path,mode) as f:
       f.write(data)
           
   def app_quit(self,x=0):
