@@ -54,7 +54,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.8"
+    PLSDR.VERSION = "1.9"
     
     # device names and invocation strings --
     # some are tested, some are search results
@@ -308,7 +308,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
       'cw_base' : 750,
       'freq' : 10000000,
       'mode' : 0,
-      'audio_device' : 'plughw:0,0',
+      'audio_device' : '',
       'fft_size' : 6,
       'corr_ppm' : 0,
       'corr_ppm_upc' : 0,
