@@ -10,4 +10,4 @@ In verson 1.9, changed default audio device to "" (which invokes the system defa
 
 Version 2.0. Now that GNURadio 3.8 is generally available, this version uses Python 3.+ and GNURadio 3.8+. While converting, fixed a few small bugs.
 
-NOTE: If you want to download the new version, visit my PLSDR web page (https://arachnoid.com/PLSDR/), it's easier than trying to make Github do anything coherent. I just wasted an hour trying to change one file.
+NOTE: If you want to download the new version, it might be easier to visit my PLSDR web page (https://arachnoid.com/PLSDR/).
