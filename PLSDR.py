@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #**************************************************************************
@@ -54,7 +54,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     QMainWindow.__init__(self)
     Ui_MainWindow.__init__(self)
     
-    PLSDR.VERSION = "1.9"
+    PLSDR.VERSION = "2.0"
     
     # device names and invocation strings --
     # some are tested, some are search results
@@ -633,7 +633,7 @@ class PLSDR(QMainWindow, Ui_MainWindow):
     self.mode_field = -1 # field from which mode is extracted
     for mult in mults:
       for n,field in enumerate(self.fieldNames):
-        if re.search("(?i).*%s.*" % mult,field) != None:
+        if re.search(r"(?i).*\b%s.*" % mult,field) != None:
           rmult = mults[mult]
           self.freq_field = n
         if re.search("(?i).*mode.*",field) != None:

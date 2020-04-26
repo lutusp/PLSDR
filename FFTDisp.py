@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #**************************************************************************
@@ -187,7 +187,7 @@ class FFTDispWidget(QWidget):
       if(sz > 0):
         # select zoomed data array segment
         wfdest = source[pa:pb]
-        v = wfdest[sz/2]
+        v = wfdest[int(sz/2)]
         self.ss += (v-self.ss) * self.integ_constant
         self.main.signal_progress_bar.setValue(self.ss)
         self.main.signal_progress_bar.setFormat("%.1f db" % self.ss)
@@ -266,7 +266,6 @@ class FFTDispWidget(QWidget):
         s = "%.3f MHz" % (f/1e6)
         qp.drawText(self.mp.x(),self.mp.y()-24,s)
         s = "%.1f db" % (self.db)
-        qp.drawText(self.mp.x(),self.mp.y()-4,s)
-        
+        qp.drawText(self.mp.x(),self.mp.y()-4,s) 
       self.drawing = False
     

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #**************************************************************************
@@ -381,17 +381,17 @@ class Radio(gr.top_block,QWidget):
     
     self.analog_agc_ff = analog.agc2_ff(1e-1, 1e-2, 1.0, 1.0)
     self.analog_agc_ff.set_max_gain(1)
-    
+        
     self.rational_resampler_wid = filter.rational_resampler_ccc(
-      decimation=self.dec_wid,
-      interpolation=self.interp_wid,
+      decimation=int(self.dec_wid),
+      interpolation=int(self.interp_wid),
       taps=None,
       fractional_bw=None,
         )
         
     self.rational_resampler_nrw = filter.rational_resampler_ccc(
-      decimation=self.dec_nrw,
-      interpolation=self.interp_nrw,
+      decimation=int(self.dec_nrw),
+      interpolation=int(self.interp_nrw),
       taps=None,
       fractional_bw=None,
         )
